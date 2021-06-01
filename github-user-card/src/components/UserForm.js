@@ -5,7 +5,7 @@ class UserForm extends React.Component {
     return (
       <form onSubmit={this.props.formSubmit}>
       <input
-      placeholder="GitHub UserName"
+      placeholder="Input UserName"
       onChange={this.props.formChange}
       value={this.props.value}
       type="text"/>

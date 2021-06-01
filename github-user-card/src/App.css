@@ -3,26 +3,97 @@
   width: 100%;
 }
 
-h1 {
-    background: blue;
+nav {
+    background: PaleGoldenRod;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
 }
-form {
-    background: green;
+h1 {
     margin: 0;
+    font-weight: 100;
+}
+
+form {
+    margin: 0;
+    display: flex;
+}
+
+form input {
+    margin-right: 0.5rem;
+    border: 0;
+    padding: 0 0.5rem;
+}
+
+form button {
+    border: 0;
+    background: #ccc688;
+}
+
+form button:hover {
+    color: #eee8aa;
+    background: black;
 }
 
 .users-container {
-    background: red;
+    display: flex;
 }
 
 .user {
-    background: yellow;
+    background: LightGoldenrodYellow;
+    width: 48%;
+    margin: 1rem;
+    box-shadow: 3px 5px 4px #eeeeee;
 }
 
+.user h3 {
+    margin: 0.5rem 0;
+}
+
+.user ul li {
+    margin: 0 1rem;
+    list-style-type: none;
+    text-align: left;
+    font-weight: 400;
+}
+
+.user ul li.title {
+    margin: 0;
+    font-weight: 600;
+}
+
+.follower-container {
+    background: lightgoldenrodyellow;
+    width: 50%;
+    margin: 1rem;
+    width: 48%;
+    box-shadow: 3px 5px 4px #eeeeee;
+}
 .followers {
-    background: purple;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .followers .user {
-    background: orange;
+    background: #ccc688;
+    width: 40%;
+    box-sizing: border-box;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 3px 5px 4px #ddd799;
+}
+
+.followers .user h3 {
+    font-size: 0.8rem;
+}
+.user img {
+    width: 100%;
+}
+
+a {
+    color: DarkSlateBlue;
+    text-decoration: none;
 }

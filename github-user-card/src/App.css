@@ -4,7 +4,7 @@
 }
 
 nav {
-    background: PaleGoldenRod;
+    background: palegoldenrod;
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 1rem;
@@ -40,7 +40,7 @@ form button:hover {
 }
 
 .user {
-    background: LightGoldenrodYellow;
+    background: lightgoldenrodyellow;
     width: 48%;
     margin: 1rem;
     box-shadow: 3px 5px 4px #eeeeee;
@@ -94,6 +94,6 @@ form button:hover {
 }
 
 a {
-    color: DarkSlateBlue;
+    color: darkslateblue;
     text-decoration: none;
 }

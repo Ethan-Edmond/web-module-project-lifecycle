@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+  width: 100%;
+}
+
+h1 {
+    background: blue;
+}
+form {
+    background: green;
+    margin: 0;
+}
+
+.users-container {
+    background: red;
+}
+
+.user {
+    background: yellow;
+}
+
+.followers {
+    background: purple;
+}
+
+.followers .user {
+    background: orange;
+}

@@ -6,6 +6,10 @@ import UserForm from "./components/UserForm";
 import User from "./components/User";
 import Followers from "./components/Followers";
 
+const github = axios.create({
+  baseURL: "https://api.github.com/users/"
+});
+
 class App extends React.Component {
   state = {
     user: null,
@@ -14,16 +18,18 @@ class App extends React.Component {
   }
 
   componentDidMount(){
-    axios.get("https://api.github.com/users/Ethan-Edmond")
-      .then(res => this.setState({
-        user: res.data
-      }))
-      .catch(err => console.log(err));
-    axios.get("https://api.github.com/users/Ethan-Edmond/followers")
-      .then(res => this.setState({
-        followers: res.data
-      }))
-      .catch(err => console.log(err));
+    const axiosCalls = [
+      github.get("Ethan-Edmond"),
+      github.get("Ethan-Edmond/followers")
+    ];
+    Promise.all(axiosCalls)
+      .then(([resUser, resFollowers]) => {
+        this.setState({
+          user: resUser.data,
+          followers: resFollowers.data
+        });
+      })
+      .catch(errors => console.log(errors));
   }
 
   formChange = (e) => {
@@ -34,16 +40,18 @@ class App extends React.Component {
 
   formSubmit = (e) => {
     e.preventDefault();
-    axios.get(`https://api.github.com/users/${this.state.formVal}`)
-      .then(res => {
-        this.setState({ user: res.data });
-        axios.get(`https://api.github.com/users/${this.state.formVal}/followers`)
-          .then(res => this.setState({
-            followers: res.data
-          }))
-          .catch(err => console.log(err));
+    const axiosCalls = [
+      github.get(this.state.formVal),
+      github.get(`${this.state.formVal}/followers`)
+    ];
+    Promise.all(axiosCalls)
+      .then(([resUser, resFollowers]) => {
+        this.setState({
+          user: resUser.data,
+          followers: resFollowers.data
+        });
       })
-      .catch(err => console.log(err));
+      .catch(errors => console.log(errors));
   }
 
   render(){
